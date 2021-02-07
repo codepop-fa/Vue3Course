@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'Home'}">خانه</router-link> |
+    <router-link to="/about">درباره ما</router-link> |
+     <router-link to="/contact">تماس با ما</router-link>
   </div>
   <router-view />
 </template>
