@@ -1,9 +1,7 @@
 <template>
   <div id="nav">
     <router-link :to="{ name: 'Home'}">خانه</router-link> |
-    <router-link :to="{ name:  'user', params: {username: 'iman'}}">ایمان</router-link> |
-    <router-link to="/about">درباره ما</router-link> |
-     <router-link to="/contact">تماس با ما</router-link>
+    <router-link to="/about">درباره ما</router-link> 
   </div>
   <router-view />
 </template>
