@@ -1,7 +1,7 @@
 <template>
   <div class="event-card">
-    <span>راس ساعت 12:00 در تاریخ 1400/01/13</span>
-    <h4>روز درختکاری</h4>
+    <slot></slot>
+    <slot name="title"></slot>
   </div>
 </template>
 
