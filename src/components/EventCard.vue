@@ -1,13 +1,18 @@
 <template>
   <div class="event-card">
-    <slot></slot>
-    <slot name="title"></slot>
+   <span>{{ event.time }} در تاریخ{{  event.date }} در ساعت </span>
+    <h4>{{ event.title }}</h4>
   </div>
 </template>
 
 <script>
   export default {
-    
+    props: {
+      event: {
+        type: Object,
+        required: true
+      }
+    }
   }
 </script>
 
