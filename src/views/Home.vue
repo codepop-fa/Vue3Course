@@ -7,6 +7,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue'
+import axios from 'axios'
 
 export default {
   name: "Home",
@@ -15,28 +16,20 @@ export default {
   },
   data() {
     return {
-      events: [
-        {
-          id: 5928101,
-          title: 'روز طبیعت',
-          date: '1400/01/13',
-          time: '12:00'
-        },
-         {
-          id: 5928202,
-          title: 'روز نیکوکاری',
-          date: '1400/07/01',
-          time: '18:00'
-        },
-           {
-          id: 5928549,
-          title: 'جشن تولد',
-          date: '1400/08/20',
-          time: '16:00'
-        }
-      ]
+      events: null
     }
   },
+  created() {
+    axios.get(
+      'http://localhost:3001/events'
+      ).then(response => {
+       this.events = response.data
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    
+  }
 };
 </script>
 
