@@ -7,7 +7,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue'
-import axios from 'axios'
+import EventService from '@/services/EventService.js';
 
 export default {
   name: "Home",
@@ -20,9 +20,8 @@ export default {
     }
   },
   created() {
-    axios.get(
-      'http://localhost:3001/events'
-      ).then(response => {
+    EventService.getEvents()
+    .then(response => {
        this.events = response.data
       })
       .catch(error => {
